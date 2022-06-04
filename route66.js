@@ -1,6 +1,5 @@
 window.R = {
 	_routes: {},
-	_views: [],
 	_initialized: false,
 	_selected: "",
 	_defaultHash: null,
@@ -20,8 +19,8 @@ window.R = {
 		return h;
 	},
 	_updateDOM: function() {
-		let _views = Array.from(document.querySelectorAll("[id][route]"));
-		_views.forEach(v => { v.style.display = "none"; v.classList.remove("selected"); })
+		let views = Array.from(document.querySelectorAll("[id][route]"));
+		views.forEach(v => { v.style.display = "none"; v.classList.remove("selected"); })
 		document.location.hash = this._selected;
 		let e = document.getElementById(this._selected);
 		if (e !== null) {
