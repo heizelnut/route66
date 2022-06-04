@@ -53,7 +53,7 @@ You can add more views to one page just like so:
 <section>
 ```
 
-We've now implemented 2 pages in our SPA. We now need to tinker with JS to make it work.
+We've now implemented 2 pages in our SPA. We now need to tinker with JS a little bit:
 ```js
 document.addEventListener("DOMContentLoaded", _ => { R.init() });
 ```
