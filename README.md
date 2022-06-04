@@ -61,7 +61,7 @@ This is the bare minimum to make it work. As you can see, it also changes the pa
 
 ## JavaScript API
 The Library offers a simple API, with the globally defined `R` object having only 4 methods:
-  + `R.init(?displayStyle)`: initialize the router. You can pass the CSS display style of the selected view as a parameter. Defaults to `block`.
+  + `R.init(?defaultHash, ?displayStyle)`: initialize the router. `?defaultHash` is the hash of the main page (defaults to `#start`), whereas `?displayStyle` is the CSS display type of the selected view (defaults to `block`). Both of them are optional.
   + `R.on(hash, callback)`: execute a callback when the user is on a certain view. This may be used to update the View itself with information fetched from the backend. The `HTMLElement` of the View is passed to the callback if it exists, otherwise `null`.
   + `R.go(hash)`: navigate to the corresponding View on the page (if it exists). It also fires any event attached with `R.on`.
   + `R.re(hash)`: redirect to the corresponding View. Same as `R.go` but overwrites the current Browser History with the new route.
