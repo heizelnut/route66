@@ -7,21 +7,21 @@
 		<script src="../route66.min.js"></script>
 	</head>
 	<body>
-	<section route title="Hello world" id="start">
+		<div view id="start">
 			<h1>hello world!</h1>
 			<a href="#foo">Would you like to check Foobar?</a>
 			<br>
 			<a href="#bar">Also this redirect works</a>
-		</section>
-		<section route title="Foobar" id="foo">
+		</div>
+		<div view="Foobar" id="foo">
 			<h1>Foobar It Is!</h1>
 			<a href="#random">Generate random number</a>
 			<br>
 			<a href="#start">← Back home</a>
-		</section>
-		<section route title="Random number" id="random">
+		</div>
+		<div view="Random number" id="random">
 			<a href="#start">← Back home</a>
-		</section>
+		</div>
 		<script>
 			document.addEventListener("DOMContentLoaded", e => {
 				R.on("random", v => {

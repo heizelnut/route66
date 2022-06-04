@@ -31,33 +31,33 @@ You can use [jsDelivr](https://www.jsdelivr.com) to import the library:
 ```
 
 ## How to use
-You start by defining any element with an empty `route` attribute and a unique `id`.
+You start by defining any element with a `view` attribute and a unique `id`.
 ```html
-<section route id="start">
+<div view id="start">
 	<h1>Hello world!</h1>
 	<h3>This is the main route.</h3>
-<section>
+</div>
 ```
 This is what you would call a `View` in other frameworks.
 You can add more views to one page just like so:
 ```html
-<section route title="Main page" id="start">
+<div view="Main page" id="start">
 	<h1>Hello world!</h1>
 	<h3>This is the main route.</h3>
 	<a href="#second">Go to the second page?</a>
-<section>
-<section route title="Second page" id="second">
+</div>
+<div view="Second page" id="second">
 	<h1>Wassup</h1>
 	<h3>This is the second route.</h3>
 	<a href="#start">Go back?</a>
-<section>
+</div>
 ```
 
 We've now implemented 2 pages in our SPA. We now need to tinker with JS a little bit:
 ```js
 document.addEventListener("DOMContentLoaded", _ => { R.init() });
 ```
-This is the bare minimum to make it work. As you can see, it also changes the page title according to the `title` attribute within the View. The router also adds a `selected` class to the currently selected view (for further CSS styling).
+This is the bare minimum to make it work. As you can see, it also changes the page title according to the `view` attribute value within the element. The router also adds a `selected` class to the currently selected view (for further CSS styling).
 
 ## JavaScript API
 The Library offers a simple API, with the globally defined `R` object having only 4 methods:

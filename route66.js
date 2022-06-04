@@ -3,8 +3,10 @@ window.R = {
 	_initialized: false,
 	_selected: "",
 	_defaultHash: null,
+	_originalTitle: null,
 	init: function(_defaultHash = "start") {
 		this._defaultHash = _defaultHash;
+		this._originalTitle = document.title;
 		this._selected = this._sanitizeHash(document.location.hash);
 		this._updateDOM();
 		window.addEventListener("hashchange", e => {
@@ -19,14 +21,14 @@ window.R = {
 		return h;
 	},
 	_updateDOM: function() {
-		let views = Array.from(document.querySelectorAll("[id][route]"));
+		let views = Array.from(document.querySelectorAll("[view][id]"));
 		views.forEach(v => { v.style.display = "none"; v.classList.remove("selected"); })
 		document.location.hash = this._selected;
 		let e = document.getElementById(this._selected);
 		if (e !== null) {
 			e.classList.add("selected");
 			e.style.display = "block";
-			document.title = e.getAttribute("title") || document.title;
+			document.title = e.getAttribute("view") || this._originalTitle;
 		}
 		return e;
 	},
