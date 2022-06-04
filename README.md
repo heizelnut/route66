@@ -23,7 +23,11 @@ $ make
 ## Import
 Source the `route66.min.js` file as a script. No NPM needed.
 ```html
-	<script src="route66.min.js" defer></script>
+<script src="route66.min.js" defer></script>
+```
+You can use [jsDelivr](https://www.jsdelivr.com) to import the library:
+```html
+<script src="https://cdn.jsdelivr.net/gh/heizelnut/route66/route66.min.js"></script>
 ```
 
 ## How to use
